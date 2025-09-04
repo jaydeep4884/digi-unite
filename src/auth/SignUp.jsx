@@ -5,18 +5,21 @@ import GoogleIcon from "../assets/icons/google-icon.svg";
 import { Formik, Field, Form } from "formik";
 import authBg from "../assets/authBg.png";
 import { motion } from "framer-motion";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
-const Login = () => {
-  const ini = { email: "", password: "" };
+const SignUp = () => {
+  const ini = { fullName: "", email: "", password: "" };
   const FormFields = [
+    { name: "fullName", type: "text", label: "Full Name" },
     { name: "email", type: "email", label: "Email" },
     { name: "password", type: "password", label: "Confirm Password" },
   ];
+  const navigate = useNavigate();
 
   const handleFormData = (values, { resetForm }) => {
     console.log(values);
-    alert("Login SuccessFull !");
+    alert("Registration SuccessFull !");
+    navigate("/");
     resetForm();
   };
 
@@ -38,7 +41,7 @@ const Login = () => {
             className="w-full lg:w-2/5 flex flex-col"
           >
             <Typography className="mb-4 !font-extrabold !text-[24px] lg:!text-[34px]">
-              Create Account
+              Register New User !
             </Typography>
             <Typography className="!text-gray-300 mb-4 !text-sm sm:text-base">
               Make your design look more beautiful with 3D abstract geometric
@@ -68,13 +71,13 @@ const Login = () => {
               variant="h5"
               className="!text-white !mb-2 !font-extrabold text-center lg:text-left"
             >
-              Already Have Account? Log In !!
+              Create New Account
             </Typography>
             <Typography
               variant="subtitle1"
               className="!text-gray-400 !mb-6 text-center lg:text-left !text-sm"
             >
-              Login to Kar Mere Bhai...!!
+              Jaldi Se New Account Banale.. Tere Liye Ek Surprise he !!
             </Typography>
 
             {/* Google Login */}
@@ -143,7 +146,7 @@ const Login = () => {
                     variant="contained"
                     className="!bg-[#FBD200] !text-black !rounded-xl !py-3 hover:!bg-[#e5c100]"
                   >
-                    Login
+                    Register
                   </Button>
                 </motion.div>
               </Form>
@@ -154,15 +157,12 @@ const Login = () => {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 1.2 }}
-              className="!mt-4"
+              className="!mt-4 "
             >
-              <Link
-                to="/signup"
-                className="!text-sm !text-gray-400 text-center"
-              >
-                Don't have an account?{" "}
+              <Link to="/" className="!text-sm !text-gray-400 text-center">
+                Already have an account?{" "}
                 <span className="text-[#FBD200] hover:underline cursor-pointer">
-                  Sign Up
+                  Login
                 </span>
               </Link>
             </motion.div>
@@ -173,4 +173,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;

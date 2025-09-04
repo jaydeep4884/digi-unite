@@ -5,11 +5,14 @@ import './App.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@ant-design/v5-patch-for-react-19';
+import { BrowserRouter } from "react-router";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
