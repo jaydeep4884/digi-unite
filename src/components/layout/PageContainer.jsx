@@ -1,17 +1,15 @@
-import { Container, ThemeProvider } from '@mui/material'
-import React from 'react'
-import darkTheme from './Theme'
+import { Container, ThemeProvider } from "@mui/material";
+import React from "react";
+import darkTheme from "./Theme";
 
 const PageContainer = ({ children }) => {
-    return (
-        <>
-            <Container maxWidth="lg">
-                <ThemeProvider theme={darkTheme}>
-                    {children}
-                </ThemeProvider>
-            </Container>
-        </>
-    )
-}
+  return (
+    <>
+      <Container maxWidth="lg">
+        <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>
+      </Container>
+    </>
+  );
+};
 
-export default PageContainer
+export default PageContainer;
