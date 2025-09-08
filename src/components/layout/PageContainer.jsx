@@ -5,7 +5,7 @@ import darkTheme from "./Theme";
 const PageContainer = ({ children }) => {
   return (
     <>
-      <Container maxWidth="lg">
+      <Container className="" maxWidth="lg">
         <ThemeProvider theme={darkTheme}>{children}</ThemeProvider>
       </Container>
     </>

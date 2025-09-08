@@ -1,113 +1,56 @@
 import { motion } from "framer-motion";
-import { Brain, Zap, Target, TrendingUp } from "lucide-react";
-import { Badge, Card } from "antd";
 import PageContainer from "../layout/PageContainer";
 import { Box } from "@mui/material";
+import heroImg1 from "../assets/heroImg/hero-img-01.png";
+import heroImg2 from "../assets/heroImg/hero-img-02.png";
+import heroImg3 from "../assets/heroImg/hero-img-03.png";
+import heroImg4 from "../assets/heroImg/hero-img-04.png";
+import heroBg from "../assets/heroImg/hero-bg.png";
 
-export default function Hero37() {
+export default function Hero() {
   const aiFeatures = [
-    { icon: Brain, title: "Smart AI", value: "99.9%", label: "Accuracy" },
-    { icon: Zap, title: "Lightning", value: "< 100ms", label: "Response" },
-    { icon: Target, title: "Precision", value: "10x", label: "Faster" },
-    { icon: TrendingUp, title: "Growth", value: "+250%", label: "Performance" },
+    { image: heroImg1 },
+    { image: heroImg2 },
+    { image: heroImg3 },
+    { image: heroImg4 },
   ];
 
   return (
-    <section className="hero-theme-37 bg-[#0A0A0A] text-white min-h-screen flex flex-col items-center py-10 relative overflow-hidden">
-      {/* Neural pattern background */}
-      <Box className="absolute inset-0 z-0 pointer-events-none">
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backgroundImage: `
-              radial-gradient(circle at 10% 90%, #00ff99 1px, transparent 1px),
-              radial-gradient(circle at 90% 10%, #00ffcc 1px, transparent 1px),
-              radial-gradient(circle at 50% 50%, #00ffaa 1px, transparent 1px)
-            `,
-            backgroundSize: "80px 80px, 120px 120px, 160px 160px",
-            opacity: 0.15,
-          }}
-          animate={{
-            backgroundPosition: [
-              "0% 0%",
-              "100% 100%",
-              "0% 0%", // loop back
-            ],
-          }}
-          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-        />
-      </Box>
+    <section className=" text-white flex flex-col items-center py-10 relative overflow-hidden">
+      <motion.img
+        src={heroBg}
+        alt="background blob"
+        className="absolute top-0 left-0 !right-0 w-full h-[700px] opacity-[1.7] pointer-events-none "
+        animate={{ x: ["-10%", "10%", "-10%"] }} 
+        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       <PageContainer>
         <Box className="relative z-10 text-center">
-          {/* Glowing Badge */}
-          <motion.div
-            className="mb-8 flex justify-center"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-          >
-            <Box className="relative">
-              <Box className="absolute inset-0 blur-xl rounded-full bg-gradient-to-r from-green-400 to-green-600 opacity-30"></Box>
-              <Badge
-                variant="outline"
-                className="relative z-10 bg-[#1A1A1A] text-white px-6 py-3 text-base font-medium border border-white/10 shadow-md flex items-center"
-              >
-                <Brain className="w-5 h-5 mr-2 animate-pulse" />
-                Powered by Advanced AI
-              </Badge>
-            </Box>
-          </motion.div>
-
           {/* Headline */}
           <motion.h1
-            className="text-5xl md:text-7xl font-bold mb-6 leading-tight"
+            className="text-3xl lg:text-7xl md:text-5xl font-extrabold my-2 lg:my-6 "
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            Next-Gen
-            <span
-              className="block bg-clip-text text-transparent"
-              style={{
-                backgroundImage: "linear-gradient(135deg, #22c55e, #86efac)",
-              }}
-            >
-              AI Platform
+            Find Africa’s best
+            <span className="block  bg-clip-text text-[#FBD200]">
+              digital democracy <span className="text-white">tools</span>
             </span>
           </motion.h1>
 
           {/* Subheading */}
           <motion.p
-            className="text-xl md:text-2xl text-gray-400 mb-12 max-w-2xl mx-auto"
+            className="text-sm md:text-lg mb-12 max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Harness the power of artificial intelligence to transform your
-            business. Our cutting-edge AI tools provide unprecedented insights
-            and automation.
+            Open-source resources to strengthen the implementation of the
+            African Charter for Democracy, Elections & Governance (ACDEG) across
+            the continent
           </motion.p>
-
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16"
-          >
-            <motion.div {...motion.buttonHover}>
-              <button className="px-6 py-2.5 text-lg border border-white/20 text-white hover:bg-white/10 rounded-xl  transition-all duration-300">
-                Start AI Journey
-              </button>
-            </motion.div>
-
-            <motion.div {...motion.buttonHover}>
-              <button className="px-6 py-2.5 text-lg border border-white/20 text-white hover:bg-white/10 rounded-xl  transition-all duration-300">
-                Watch Demo
-              </button>
-            </motion.div>
-          </motion.div>
 
           {/* Feature Grid */}
           <motion.div
@@ -116,25 +59,20 @@ export default function Hero37() {
             initial="hidden"
             animate="visible"
           >
-            {aiFeatures.map((feature, index) => (
+            {aiFeatures.map((el, index) => (
               <motion.div
                 key={index}
                 variants={motion.item}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="p-6 text-center bg-[#121212]/70 border border-white/10 shadow-md rounded-xl">
-                  <Box className="w-12 h-12 mx-auto mb-4 rounded-full bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center">
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </Box>
-                  <Box className="text-2xl font-bold text-green-300 mb-1">
-                    {feature.value}
-                  </Box>
-                  <Box className="text-sm text-gray-400">{feature.label}</Box>
-                  <Box className="text-xs font-medium text-white mt-1">
-                    {feature.title}
-                  </Box>
-                </Card>
+                <Box className="text-center overflow-hidden bg-[#111111] rounded-xl lg:rounded-3xl shadow-2xl transition-all duration-300  hover:shadow-[0_0_25px_rgba(0,255,255,0.15)]">
+                  <img
+                    src={el.image}
+                    className="w-full object-contain h-auto"
+                    alt="HeroImage"
+                  />
+                </Box>
               </motion.div>
             ))}
           </motion.div>

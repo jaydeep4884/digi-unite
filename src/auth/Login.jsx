@@ -3,7 +3,7 @@ import { Box, Button, TextField, Typography, Divider } from "@mui/material";
 import PageContainer from "../components/layout/PageContainer";
 import GoogleIcon from "../components/assets/icons/google-icon.svg";
 import { Formik, Field, Form } from "formik";
-import authBg from "../components/assets/authBg.png";
+import authBg from "../components/assets/heroImg/authBg.png";
 import { motion } from "framer-motion";
 import { Link } from "react-router";
 

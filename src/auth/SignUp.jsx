@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Box, Button, TextField, Typography, Divider } from "@mui/material";
 import PageContainer from "../components/layout/PageContainer";
-import authBg from "../components/assets/authBg.png";
+import authBg from "../components/assets/heroImg/authBg.png";
 import GoogleIcon from "../components/assets/icons/google-icon.svg";
 import { Formik, Field, Form } from "formik";
 import { motion } from "framer-motion";

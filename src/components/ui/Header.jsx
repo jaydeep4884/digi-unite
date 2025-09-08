@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0 right-0 z-50 bg-black">
+      <header className="fixed top-0 left-0  right-0 z-50 bg-[#121212] ">
         <PageContainer>
           <nav className="flex items-center justify-between py-5">
             {/* Logo */}
@@ -34,7 +34,7 @@ const Header = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center space-x-8">
+            <div className="hidden lg:flex items-center space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
@@ -47,7 +47,7 @@ const Header = () => {
             </div>
 
             {/* CTA */}
-            <div className="hidden md:flex">
+            <div className="hidden lg:flex">
               <Link
                 to="/signup"
                 className="px-5 py-2 text-sm font-medium text-white rounded-full bg-gradient-to-r from-purple-600 to-pink-500 hover:shadow-[0_0_15px_rgba(217,70,239,0.7)] transition-all duration-300"
@@ -59,7 +59,7 @@ const Header = () => {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-white p-2 rounded-md hover:bg-white/10 transition-all"
+              className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition-all"
             >
               {isMenuOpen ? (
                 <FiX className="h-6 w-6" />
