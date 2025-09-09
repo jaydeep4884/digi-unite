@@ -19,7 +19,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="fixed top-0 left-0  right-0 z-50 bg-[#121212] ">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md border-b border-white/10 ">
         <PageContainer>
           <nav className="flex items-center justify-between py-5">
             {/* Logo */}
