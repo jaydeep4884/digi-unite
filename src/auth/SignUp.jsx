@@ -19,7 +19,7 @@ const SignUp = () => {
   const handleFormData = (values, { resetForm }) => {
     console.log(values);
     alert("Registration SuccessFull !");
-    navigate("/");
+    navigate("/login");
     resetForm();
   };
 

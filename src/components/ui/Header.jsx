@@ -21,7 +21,7 @@ const Header = () => {
     <>
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md border-b border-white/10 ">
         <PageContainer>
-          <nav className="flex items-center justify-between py-5">
+          <nav className="flex items-center justify-between py-3">
             {/* Logo */}
             <Link to="/home" className="flex items-center">
               <img
@@ -81,7 +81,7 @@ const Header = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-40 bg-black/80 backdrop-blur-2xl flex flex-col items-center justify-center space-y-6"
+            className="fixed h-screen inset-0 z-40 bg-black/80 backdrop-blur-2xl flex flex-col items-center justify-center space-y-6"
           >
             {navLinks.map((link, i) => (
               <motion.div
@@ -92,7 +92,7 @@ const Header = () => {
               >
                 <Link
                   to={link.href}
-                  className="text-2xl font-medium text-white hover:text-purple-400 transition-all"
+                  className="text-xl font-medium text-white hover:text-purple-400 transition-all"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
